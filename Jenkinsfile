@@ -24,7 +24,7 @@ node {
         sh "docker run --name $PROJECT_NAME \
                 -p 9200:9200 \
                 --network cluster-network \
-                -v /usr/share/elasticsearch/data
+                -v /usr/share/elasticsearch/data \
                 -d elasticsearch:8.3.2"
         echo "Deploy de ${PROJECT_NAME} para o ambiente ${environment} finalizado com sucesso"
 
