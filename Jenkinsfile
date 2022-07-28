@@ -21,7 +21,7 @@ node {
 
     stage(name: 'Deploy to Docker Container') {
         echo 'Deploying images to docker container'
-        sh "docker run --name $PROJECT_NAME --net cluster-network -e 'discovery.type=single-node' -p 9200:9200 -p 9300:9300 -d docker.elastic.co/elasticsearch/elasticsearch:7.17.5"
+        sh "docker-compose up"
         echo "Deploy de ${PROJECT_NAME} para o ambiente ${environment} finalizado com sucesso"
 
     }
