@@ -21,7 +21,7 @@ node {
 
     stage(name: 'Deploy to Docker Container') {
         echo 'Deploying images to docker container'
-        sh "docker run --name $PROJECT_NAME  \
+        sh "docker service create --name $PROJECT_NAME  \
             --net cluster-network \
             -p 9200:9200 \
             -p 9300:9300 \
